@@ -1,0 +1,27 @@
+version: "3.3"
+services:
+    mailhog:
+      image: mailhog/mailhog:v1.0.1
+      container_name: mailhog-${targetEnvironment}
+      ports:
+        - ${mailhogSmtpPort}:1025 # smtp server
+        - ${mailhogWebPort}:8025 # web ui
+      volumes:
+        - ./auth.file:/data/mailhog/auth.file
+      entrypoint: MailHog -auth-file=/data/mailhog/auth.file
+      environment:
+        MH_STORAGE: memory
+      deploy:
+        resources:
+          limits:
+            memory: 1G
+    activemq:
+      image: rmohr/activemq:5.10.0
+      container_name: activemq-${targetEnvironment}
+      environment:
+        ACTIVEMQ_REMOVE_DEFAULT_ACCOUNT: "true"
+        ACTIVEMQ_ADMIN_LOGIN: admin
+        ACTIVEMQ_ADMIN_PASSWORD: password
+      ports:
+        - ${activeMqbroker}:61616 # broker (admin:adminactivemq)(amq:amq)
+        - ${activeMqweb}:8161   # web    http://boot2docker:8161/admin (admin:admin)
