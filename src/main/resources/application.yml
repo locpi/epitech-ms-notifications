@@ -3,9 +3,20 @@ server:
 spring:
   application:
     name: ms-notifications
+  activemq:
+    broker-url: tcp://localhost:61616
+    user: admin
+    password: password
+    packages:
+      trusted: fr.ippon
+  mail:
+    host: localhost
+    port: 1025
+    username: admin
+    password: password
 eureka:
   instance:
     preferIpAddress: true
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true

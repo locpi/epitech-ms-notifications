@@ -38,7 +38,7 @@ node {
 
             stage('Docker Images') {
                 parallel 'notifications': {
-                    sh "docker build -t epitech/notifications:latest ."
+                    sh "docker build -t epitech/notifications:${gitBranch} ."
                 }
             }
         }
