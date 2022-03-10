@@ -1,4 +1,4 @@
-package fr.ippon.epitech.commandes.neworder;
+package fr.ippon.epitech.notifications.neworder;
 
 import java.io.Serializable;
 
@@ -7,12 +7,6 @@ public class MessageNewOrderIncomming implements Serializable {
     private String nom;
     private String prenom;
     private String email;
-
-    public MessageNewOrderIncomming(String nom, String prenom, String email) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.email = email;
-    }
 
     public String getNom() {
         return nom;

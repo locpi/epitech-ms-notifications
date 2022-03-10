@@ -1,7 +1,7 @@
-package fr.ippon.epitech.commandes.mock;
+package fr.ippon.epitech.notifications.mock;
 
-import fr.ippon.epitech.commandes.neworder.MessageNewOrderIncomming;
-import fr.ippon.epitech.commandes.sendorder.MessageOrderSendIncomming;
+import fr.ippon.epitech.notifications.neworder.MessageNewOrderIncomming;
+import fr.ippon.epitech.notifications.sendorder.MessageOrderSendIncomming;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.jms.core.JmsTemplate;
@@ -19,7 +19,10 @@ public class OrderApiTest {
 
     @GetMapping("/new")
     public MessageNewOrderIncomming newOrder() {
-        MessageNewOrderIncomming message = new MessageNewOrderIncomming("Pincon", "Loic", "test@test.fr");
+        MessageNewOrderIncomming message = new MessageNewOrderIncomming();
+        message.setEmail("loic.pincon@mieakl.com");
+        message.setNom("Pincon");
+        message.setPrenom("loic");
         jmsTemplate.convertAndSend("notification_new_order", message);
         return message;
     }

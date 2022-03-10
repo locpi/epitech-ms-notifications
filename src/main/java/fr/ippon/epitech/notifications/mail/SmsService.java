@@ -1,4 +1,4 @@
-package fr.ippon.epitech.commandes.mail;
+package fr.ippon.epitech.notifications.mail;
 
 import org.springframework.stereotype.Service;
 

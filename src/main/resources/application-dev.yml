@@ -18,3 +18,7 @@ eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
+logging:
+  level:
+    root: info
+    org.springframework.jms: debug

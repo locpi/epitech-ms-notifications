@@ -1,4 +1,4 @@
-package fr.ippon.epitech.commandes.sendorder;
+package fr.ippon.epitech.notifications.sendorder;
 
 import java.io.Serializable;
 
@@ -7,6 +7,10 @@ public class MessageOrderSendIncomming implements Serializable {
     private String number;
 
     private String numeroColis;
+
+    public MessageOrderSendIncomming(){
+
+    }
 
     public MessageOrderSendIncomming(String number, String numeroColis) {
         this.number = number;

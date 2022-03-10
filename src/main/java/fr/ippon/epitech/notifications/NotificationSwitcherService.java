@@ -1,9 +1,9 @@
-package fr.ippon.epitech.commandes;
+package fr.ippon.epitech.notifications;
 
-import fr.ippon.epitech.commandes.mail.EmailService;
-import fr.ippon.epitech.commandes.mail.SmsService;
-import fr.ippon.epitech.commandes.neworder.MessageNewOrderIncomming;
-import fr.ippon.epitech.commandes.sendorder.MessageOrderSendIncomming;
+import fr.ippon.epitech.notifications.mail.EmailService;
+import fr.ippon.epitech.notifications.mail.SmsService;
+import fr.ippon.epitech.notifications.neworder.MessageNewOrderIncomming;
+import fr.ippon.epitech.notifications.sendorder.MessageOrderSendIncomming;
 import org.springframework.stereotype.Service;
 
 @Service
